@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>HomeScreen.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+HomeScreen.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">arogyanidhi</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">screens</span>
+
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">clickable</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.*</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">lazy</span><span class="s2">.</span><span class="s1">grid</span><span class="s2">.</span><span class="s1">GridCells</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">lazy</span><span class="s2">.</span><span class="s1">grid</span><span class="s2">.</span><span class="s1">LazyVerticalGrid</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">lazy</span><span class="s2">.</span><span class="s1">grid</span><span class="s2">.</span><span class="s1">items</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">Icons</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">filled</span><span class="s2">.*</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.*</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">runtime</span><span class="s2">.</span><span class="s1">Composable</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">Alignment</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">Modifier</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">graphics</span><span class="s2">.</span><span class="s1">vector</span><span class="s2">.</span><span class="s1">ImageVector</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">font</span><span class="s2">.</span><span class="s1">FontWeight</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">unit</span><span class="s2">.</span><span class="s1">dp</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">unit</span><span class="s2">.</span><span class="s1">sp</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">navigation</span><span class="s2">.</span><span class="s1">NavHostController</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">arogyanidhi</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">navigation</span><span class="s2">.</span><span class="s1">Screen</span>
+
+<span class="s1">@OptIn</span><span class="s2">(</span><span class="s1">ExperimentalMaterial3Api::</span><span class="s0">class</span><span class="s2">)</span>
+<span class="s1">@Composable</span>
+<span class="s0">fun </span><span class="s1">HomeScreen</span><span class="s2">(</span><span class="s1">navController: NavHostController</span><span class="s2">) {</span>
+    <span class="s1">Scaffold</span><span class="s2">(</span>
+        <span class="s1">topBar </span><span class="s2">= {</span>
+            <span class="s1">TopAppBar</span><span class="s2">(</span><span class="s1">title </span><span class="s2">= { </span><span class="s1">Text</span><span class="s2">(</span><span class="s3">&quot;Arogya-Nidhi&quot;</span><span class="s2">) })</span>
+        <span class="s2">}</span>
+    <span class="s2">) { </span><span class="s1">padding </span><span class="s2">-&gt;</span>
+        <span class="s1">Column</span><span class="s2">(</span>
+            <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+                <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">padding</span><span class="s2">)</span>
+                <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s4">16</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">),</span>
+            <span class="s1">horizontalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterHorizontally</span>
+        <span class="s2">) {</span>
+            <span class="s1">Text</span><span class="s2">(</span>
+                <span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;Healthcare Information Assistant&quot;</span><span class="s2">,</span>
+                <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">20</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+                <span class="s1">fontWeight </span><span class="s2">= </span><span class="s1">FontWeight</span><span class="s2">.</span><span class="s1">Bold</span><span class="s2">,</span>
+                <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">bottom </span><span class="s2">= </span><span class="s4">24</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+            <span class="s2">)</span>
+
+            <span class="s0">val </span><span class="s1">menuItems </span><span class="s2">= </span><span class="s1">listOf</span><span class="s2">(</span>
+                <span class="s1">HomeMenuItem</span><span class="s2">(</span><span class="s3">&quot;Schemes&quot;</span><span class="s2">, </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Default</span><span class="s2">.</span><span class="s1">HealthAndSafety</span><span class="s2">, </span><span class="s1">Screen</span><span class="s2">.</span><span class="s1">Schemes</span><span class="s2">.</span><span class="s1">route</span><span class="s2">),</span>
+                <span class="s1">HomeMenuItem</span><span class="s2">(</span><span class="s3">&quot;Eligibility&quot;</span><span class="s2">, </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Default</span><span class="s2">.</span><span class="s1">FactCheck</span><span class="s2">, </span><span class="s1">Screen</span><span class="s2">.</span><span class="s1">Eligibility</span><span class="s2">.</span><span class="s1">route</span><span class="s2">),</span>
+                <span class="s1">HomeMenuItem</span><span class="s2">(</span><span class="s3">&quot;Hospitals&quot;</span><span class="s2">, </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Default</span><span class="s2">.</span><span class="s1">LocalHospital</span><span class="s2">, </span><span class="s1">Screen</span><span class="s2">.</span><span class="s1">Hospitals</span><span class="s2">.</span><span class="s1">route</span><span class="s2">),</span>
+                <span class="s1">HomeMenuItem</span><span class="s2">(</span><span class="s3">&quot;Chatbot&quot;</span><span class="s2">, </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Default</span><span class="s2">.</span><span class="s1">Chat</span><span class="s2">, </span><span class="s1">Screen</span><span class="s2">.</span><span class="s1">Chatbot</span><span class="s2">.</span><span class="s1">route</span><span class="s2">)</span>
+            <span class="s2">)</span>
+
+            <span class="s1">LazyVerticalGrid</span><span class="s2">(</span>
+                <span class="s1">columns </span><span class="s2">= </span><span class="s1">GridCells</span><span class="s2">.</span><span class="s1">Fixed</span><span class="s2">(</span><span class="s4">2</span><span class="s2">),</span>
+                <span class="s1">horizontalArrangement </span><span class="s2">= </span><span class="s1">Arrangement</span><span class="s2">.</span><span class="s1">spacedBy</span><span class="s2">(</span><span class="s4">16</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">),</span>
+                <span class="s1">verticalArrangement </span><span class="s2">= </span><span class="s1">Arrangement</span><span class="s2">.</span><span class="s1">spacedBy</span><span class="s2">(</span><span class="s4">16</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">),</span>
+                <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+            <span class="s2">) {</span>
+                <span class="s1">items</span><span class="s2">(</span><span class="s1">menuItems</span><span class="s2">) { </span><span class="s1">item </span><span class="s2">-&gt;</span>
+                    <span class="s1">HomeCard</span><span class="s2">(</span><span class="s1">item</span><span class="s2">) {</span>
+                        <span class="s1">navController</span><span class="s2">.</span><span class="s1">navigate</span><span class="s2">(</span><span class="s1">item</span><span class="s2">.</span><span class="s1">route</span><span class="s2">)</span>
+                    <span class="s2">}</span>
+                <span class="s2">}</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s1">data </span><span class="s0">class </span><span class="s1">HomeMenuItem</span><span class="s2">(</span><span class="s0">val </span><span class="s1">title: String</span><span class="s2">, </span><span class="s0">val </span><span class="s1">icon: ImageVector</span><span class="s2">, </span><span class="s0">val </span><span class="s1">route: String</span><span class="s2">)</span>
+
+<span class="s1">@Composable</span>
+<span class="s0">fun </span><span class="s1">HomeCard</span><span class="s2">(</span><span class="s1">item: HomeMenuItem</span><span class="s2">, </span><span class="s1">onClick: </span><span class="s2">() -&gt; </span><span class="s1">Unit</span><span class="s2">) {</span>
+    <span class="s1">Card</span><span class="s2">(</span>
+        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+            <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+            <span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">120</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+            <span class="s2">.</span><span class="s1">clickable </span><span class="s2">{ </span><span class="s1">onClick</span><span class="s2">() },</span>
+        <span class="s1">elevation </span><span class="s2">= </span><span class="s1">CardDefaults</span><span class="s2">.</span><span class="s1">cardElevation</span><span class="s2">(</span><span class="s1">defaultElevation </span><span class="s2">= </span><span class="s4">4</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+    <span class="s2">) {</span>
+        <span class="s1">Column</span><span class="s2">(</span>
+            <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">(),</span>
+            <span class="s1">verticalArrangement </span><span class="s2">= </span><span class="s1">Arrangement</span><span class="s2">.</span><span class="s1">Center</span><span class="s2">,</span>
+            <span class="s1">horizontalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterHorizontally</span>
+        <span class="s2">) {</span>
+            <span class="s1">Icon</span><span class="s2">(</span><span class="s1">item</span><span class="s2">.</span><span class="s1">icon</span><span class="s2">, </span><span class="s1">contentDescription </span><span class="s2">= </span><span class="s1">item</span><span class="s2">.</span><span class="s1">title</span><span class="s2">, </span><span class="s1">size </span><span class="s2">= </span><span class="s4">48</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+            <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">8</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">))</span>
+            <span class="s1">Text</span><span class="s2">(</span><span class="s1">item</span><span class="s2">.</span><span class="s1">title</span><span class="s2">, </span><span class="s1">fontWeight </span><span class="s2">= </span><span class="s1">FontWeight</span><span class="s2">.</span><span class="s1">Medium</span><span class="s2">)</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s1">@Composable</span>
+<span class="s0">fun </span><span class="s1">Icon</span><span class="s2">(</span><span class="s1">icon: ImageVector</span><span class="s2">, </span><span class="s1">contentDescription: String</span><span class="s2">, </span><span class="s1">size: androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">unit</span><span class="s2">.</span><span class="s1">Dp</span><span class="s2">) {</span>
+    <span class="s1">Icon</span><span class="s2">(</span>
+        <span class="s1">imageVector </span><span class="s2">= </span><span class="s1">icon</span><span class="s2">,</span>
+        <span class="s1">contentDescription </span><span class="s2">= </span><span class="s1">contentDescription</span><span class="s2">,</span>
+        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">size</span><span class="s2">(</span><span class="s1">size</span><span class="s2">)</span>
+    <span class="s2">)</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

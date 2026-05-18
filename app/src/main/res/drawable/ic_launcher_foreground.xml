@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- White Heart Shape -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,80 L50,76.5 C36,63.5 26,54.5 26,43 C26,34.5 32.5,28 41,28 C45.5,28 50,30 54,33.5 C58,30 62.5,28 67,28 C75.5,28 82,34.5 82,43 C82,54.5 72,63.5 58,76.5 L54,80 Z" />
+
+    <!-- Medical Plus inside the heart (Teal) -->
+    <path
+        android:fillColor="#0077B6"
+        android:pathData="M52,42h4v6h6v4h-6v6h-4v-6h-6v-4h6z" />
+</vector>
